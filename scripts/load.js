@@ -1,11 +1,14 @@
 "use strict";
+
 $(document).ready(function(){
 
+  // queries github api on basis of different parameters from user
   $("#gitHubSearchForm").on("submit", function(){
     var useStars = $("#useStars").val();
     var langChoice = $("#langChoice").val();
     var searchPhrase = $("#searchPhrase").val();
     
+    // search phrase for uri e.g. nugget
     if (searchPhrase) {
       resultList.text("Performing search...");
       
@@ -19,6 +22,7 @@ $(document).ready(function(){
         gitSearch += "&sort=stars";
       }
 
+      // ajax call to get response from git api
       $.ajax({
         url : gitSearch,
         type: 'GET',
@@ -34,14 +38,15 @@ $(document).ready(function(){
 
 	var resultList = $("#resultslist");
 	var toggleButton = $("#toggleButton");
-	toggleButton.on('click', function(){
-	resultList.toggle(500);
+	
+  toggleButton.on('click', function(){
+  	resultList.toggle(500);
 
-	if (toggleButton.text() === 'Hide'){
-		toggleButton.text('Show');
-	} else {
-		toggleButton.text('Hide');
-	}
+  	if (toggleButton.text() === 'Hide'){
+  		toggleButton.text('Show');
+  	} else {
+  		toggleButton.text('Hide');
+  	}
 	});
 	
 	var items = $("header nav li");
@@ -49,6 +54,10 @@ $(document).ready(function(){
 
 	items.filter(":first").css("font-size","22px");
 
+  /*
+  * displayResult - displays the query result using a list
+  * @params  - {object} - result  
+  */
 	function displayResult(result){
 		resultList.empty();
 		$.each(result, function(i, item){

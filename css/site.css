@@ -13,11 +13,6 @@ footer {
 body {
   font-family: Segoe UI, Arial, Helvetica, sans-serif;
   font-size: 14px;
-  background-color: darkgreen;
-}
-
-a {
-  color: green;
 }
 
 html, body {
@@ -36,6 +31,11 @@ html, body {
   color: #202020;
   margin: 20px 0;
   padding: 5px;
+}
+
+#img-header{
+  height: 8em;
+  width: 34%;
 }
 
 #results {
@@ -67,7 +67,7 @@ html, body {
 }
 
 .simple-form input[type=submit] {
-  background-color: green;
+  background-color: blue;
   color: white;
   border-radius: 15px;
   padding: 3px;
@@ -79,6 +79,12 @@ html, body {
   margin: 0 auto;
   background-color: white;
   padding: 5px;
+}
+
+.page-header{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic; 
 }
 
 header nav {

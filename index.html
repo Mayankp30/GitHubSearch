@@ -2,10 +2,15 @@
 <html>
 
 <head>
-  <title>GitProjects</title>
+  <title>GitHub Projects</title>
+  <link rel="icon" src="img/fox.png" type="image/png" sizes="16x16">
   <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>      
     <![endif]-->
+
+  <script type="text/javascript" src="scripts/jquery-3.2.0.min.js"></script>
+  <script type="text/javascript" src="scripts/load.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/site.css" />
 </head>
 
@@ -13,42 +18,43 @@
   <div class="container">
     <header>
       <nav>
-        <ul>
-          <li><a href="/index.html">Home</a>
+        <ul class="page-header">
+          <li><!-- <a href="/index.html">Home</a> -->
           </li>
-          <li><a href="/contact.html">Contact</a>
+          <li><a href="/Users/mayank/Documents/Workplace/practiceJS/hub-mp/untitled.html" class="btn btn-info">Contact</a>
           </li>
-          <li><a href="/about.html">About</a>
+          <li><!-- <a href="/Users/mayank/Documents/Workplace/practiceJS/hub-mp/about.html">About</a> -->
           </li>
         </ul>
       </nav>
       <div>
-        <img src="img/logo.gif" class="bordered-image" />
+        <img src="img/logo.png" class="bordered-image" id="img-header"/>
       </div>
       <div>This is a site to search Github for interesting projects.</div>
     </header>
     <section id="main">
       <p>In this
-        <em>sample site</em>, we'll show a list of <a href="http://github.com">Github</a> projects
-        <span>and the data</span>about
+        <em>sample site</em>, we'll show a list of <a href="http://github.com" target="_blank">Github</a> projects
+        <span>and the data about </span>
         <strong>those projects</strong>.</p>
       <form method="POST" class="bordered-image simple-form" id="gitHubSearchForm">
         <label for="searchPhrase">Search Phrase:</label>
-        <input type="text" name="searchPhrase" id="searchPhrase" />
+        <input type="text" name="searchPhrase" id="searchPhrase" required/>
         <br/>
         <input type="checkbox" name="useStars" id="useStars" checked="true" />
         <label for="useStars">Use Stars?</label>
         <br/>
         <label for="langChoice">Language:</label>
-        <select name="langChoice" id="langChoice">
+        <input type="text" name="langChoice" id="langChoice" required/>
+        <!-- <select name="langChoice" id="langChoice">
           <option>All</option>
           <option>JavaScript</option>
           <option>Java</option>
           <option>Ruby</option>
           <option>C#</option>
-        </select>
+        </select> -->
         <br/>
-        <input type="submit" value="search" />
+        <button type="submit" class="btn btn-primary" value="search">Search</button>
       </form>
       <div id="results" class="bordered-image">
         <button id="toggleButton">Hide</button>
@@ -56,8 +62,6 @@
       </div>
     </section>
   </div>
-  <script type="text/javascript" src="scripts/jquery-3.2.0.min.js"></script>
-  <script type="text/javascript" src="scripts/load.js"></script>
 </body>
 
 </html>

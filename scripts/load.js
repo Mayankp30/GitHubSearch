@@ -14,7 +14,7 @@ $(document).ready(function(){
       
       var gitSearch = "https://api.github.com/search/repositories?q=" + encodeURIComponent(searchPhrase);
       
-      if (langChoice != "All") {
+      if (typeof langChoice ==='string') {
         gitSearch += "+language:" + encodeURIComponent(langChoice);
       }
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
 	var items = $("header nav li");
 	items.css("font-weight","bold");
 
-	items.filter(":first").css("font-size","22px");
+	//items.filter(":first").css("font-size","22px");
 
   /*
   * displayResult - displays the query result using a list
@@ -79,5 +79,4 @@ $(document).ready(function(){
       resultList.append(newResult);
     });
   }
-
 });
